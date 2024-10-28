@@ -30,6 +30,8 @@ Ensure you have the following installed:
   2. Run Tests:
 
          pytest tests/test_login.py --headless
+                            or
+         pytest
 
 # CI/CD Integration
 
