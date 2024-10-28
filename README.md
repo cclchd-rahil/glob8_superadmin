@@ -42,8 +42,18 @@ Ensure you have the following installed:
   2. Run Tests in Headless Mode:
 
            pytest tests/test_login.py --headless --junitxml=report.xml
+                            or
+            pytest --junitxml=report.xml
+                         or
 
-  3. Collect Test Reports:
+             #To generate report in html
+     
+             pip install pytest-html
+             pytest --html=report.html
+
+
+
+  4. Collect Test Reports:
 
       * Configure your CI/CD tool to read report.xml for test results.
 
