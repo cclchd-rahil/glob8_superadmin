@@ -18,3 +18,12 @@ def driver():
 
     driver = webdriver.Chrome(options=chrome_options)
     return driver
+
+def driver():
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")  # Run Chrome in headless mode
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+
+    driver = webdriver.Chrome(options=chrome_options)
+    return driver
