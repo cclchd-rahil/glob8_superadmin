@@ -27,8 +27,16 @@ class Admin(BasePage):
         self.click(self.ADMIN)
 
     def click_addnew(self):
-        time.sleep(4)
-        self.click(self.ADDNEW)
+        # Wait for the button to be clickable, with a fallback screenshot for debugging
+        try:
+            add_new_button = WebDriverWait(self.driver, 10).until(
+                EC.element_to_be_clickable(self.ADDNEW)
+            )
+            self.driver.execute_script("arguments[0].scrollIntoView();", add_new_button)
+            add_new_button.click()
+        except Exception as e:
+            self.driver.save_screenshot("click_addnew_error.png")  # Save a screenshot if an error occurs
+            raise e
 
     def enter_firstname(self, firstname):
         self.send_keys(self.FIRSTNAME, firstname)
