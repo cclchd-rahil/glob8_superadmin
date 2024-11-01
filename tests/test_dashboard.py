@@ -8,7 +8,7 @@ from pages.dashboard_page import DashboardPage
 def test_admin_click(driver):
     dashboard_page = DashboardPage(driver)
     dashboard_page.click_totaladmin()
-    print("Dashboard visible")
+    print("Dashboard visibility successfull")
 
 
 
