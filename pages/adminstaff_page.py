@@ -1,4 +1,5 @@
 import selectors
+import time
 
 from selenium.common import NoSuchElementException, TimeoutException
 
@@ -26,6 +27,7 @@ class Admin(BasePage):
         self.click(self.ADMIN)
 
     def click_addnew(self):
+        time.sleep(4)
         self.click(self.ADDNEW)
 
     def enter_firstname(self, firstname):
