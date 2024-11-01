@@ -32,7 +32,6 @@ class Admin(BasePage):
             add_new_button = WebDriverWait(self.driver, 10).until(
                 EC.element_to_be_clickable(self.ADDNEW)
             )
-            self.driver.execute_script("arguments[0].scrollIntoView();", add_new_button)
             add_new_button.click()
         except Exception as e:
             self.driver.save_screenshot("click_addnew_error.png")  # Save a screenshot if an error occurs

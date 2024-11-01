@@ -1,9 +1,13 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 from .base_page import BasePage
 
 
 class DashboardPage(BasePage):
-    ADMIN = (By.XPATH, "//span[contains(text(),'Admin Staff')]")
+    TOTALADMIN = (By.XPATH, "//h4[contains(text(),'Total Admins')]")
 
-    def click_admin(self):
-        self.click(self.ADMIN)
+    def click_totaladmin(self):
+        self.click(self.TOTALADMIN)
+

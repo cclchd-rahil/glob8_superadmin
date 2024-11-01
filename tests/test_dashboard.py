@@ -7,7 +7,9 @@ from pages.dashboard_page import DashboardPage
 @pytest.mark.usefixtures("login")
 def test_admin_click(driver):
     dashboard_page = DashboardPage(driver)
-    dashboard_page.click_admin()
+    dashboard_page.click_totaladmin()
+    print("Dashboard visible")
+
 
 
 
