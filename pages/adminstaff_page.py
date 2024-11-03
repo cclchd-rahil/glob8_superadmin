@@ -1,6 +1,3 @@
-import selectors
-import time
-
 from selenium.common import NoSuchElementException, TimeoutException
 
 from .base_page import BasePage
