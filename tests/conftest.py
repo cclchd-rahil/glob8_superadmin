@@ -26,7 +26,7 @@ BASE_URL = "https://admin.nfttrace.com/login"
 USERNMAE = "superadmin@gmail.com"
 PASSWORD = "Admin@123"
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="function")
 def login(driver):
     driver.maximize_window()
     driver.get(BASE_URL)
