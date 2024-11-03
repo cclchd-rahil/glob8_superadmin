@@ -3,6 +3,7 @@ from pages import login_page
 from pages.login_page import LoginPage
 
 def test_valid_login(driver):
+    """Verify successfull login."""
     login_page =LoginPage(driver)
 
     driver.get("https://admin.nfttrace.com/login")
@@ -15,6 +16,7 @@ def test_valid_login(driver):
     assert driver.title == expected_title, f"Expected title '{expected_title}', but got '{driver.title}'"
 
 def test_invalid_login(driver):
+    """Verify login with invalid credentials displays an error message."""
     login_page = LoginPage(driver)
 
     driver.get("https://admin.nfttrace.com/login")
@@ -29,6 +31,7 @@ def test_invalid_login(driver):
                                                                          f"but got '{error_messages['require']}")
 
 def test_empty_email(driver):
+    """Verify login with empty email and correct password displays an error message."""
     login_page = LoginPage(driver)
 
     driver.get("https://admin.nfttrace.com/login")
@@ -42,6 +45,7 @@ def test_empty_email(driver):
     assert error_messages['email'] == "Email is required", (f"Expected {error_messages}, "
                                                                          f"but got '{error_messages}")
 def test_empty_password(driver):
+    """Verify login with empty password and correct email displays an error message."""
     login_page = LoginPage(driver)
 
     driver.get("https://admin.nfttrace.com/login")
@@ -56,6 +60,7 @@ def test_empty_password(driver):
                                                                          f"but got '{error_messages}")
 
 def test_empty_email_password(driver):
+    """Verify login with empty email and password displays an error message."""
     login_page = LoginPage(driver)
 
     driver.get("https://admin.nfttrace.com/login")
@@ -70,6 +75,7 @@ def test_empty_email_password(driver):
                'email'] == "Email is required", f"Expected 'Email is required', but got '{error_messages['email']}'"
     assert error_messages[
                'password'] == "Password is required", f"Expected 'Password is required', but got '{error_messages['password']}'"
+
 
 
 
