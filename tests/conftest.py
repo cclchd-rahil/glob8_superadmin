@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.options import Options
 from pages.login_page import LoginPage
 from pages.dashboard_page import DashboardPage
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="function")
 # def driver():
 #     driver = webdriver.Chrome()
 #
