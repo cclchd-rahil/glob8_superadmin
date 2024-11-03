@@ -6,6 +6,7 @@ from pages.vendor_page import Vendor
 def test_vendor(driver):
     vendor_page = Vendor(driver)
     vendor_page.click_vendor()
+    time.sleep(5)
     vendor_page.click_addnew()
     vendor_page.enter_orgname("Chaincode")
     vendor_page.enter_pan("EPLPR2941F")
