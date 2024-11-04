@@ -1,3 +1,5 @@
+import time
+
 import pytest
 from pages.about_us_page import AboutUs
 
@@ -6,6 +8,7 @@ from pages.about_us_page import AboutUs
 def test_about_us(driver):
     about_us_page = AboutUs(driver)
     about_us_page.click_about_us()
+    time.sleep(2)
     captured_text = about_us_page.get_tittle_element()
     expected_text = "About NFTtrace"
 
