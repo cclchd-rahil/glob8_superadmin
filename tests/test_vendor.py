@@ -3,6 +3,7 @@ import pytest
 from pages.vendor_page import Vendor
 
 
+@pytest.mark.vendor
 @pytest.mark.usefixtures("login")
 def test_vendor(driver):
     vendor_page = Vendor(driver)

@@ -1,7 +1,10 @@
 from selenium.webdriver.common.by import By
 from pages import login_page
 from pages.login_page import LoginPage
+import pytest
 
+
+@pytest.mark.login
 def test_valid_login(driver):
     """Verify successfull login."""
     login_page =LoginPage(driver)
