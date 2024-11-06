@@ -10,7 +10,9 @@ class Transaction(BasePage):
         self.click(self.TRANSACTION)
 
     def get_transaction_title(self):
-        transaction_title_element = self.driver.find_element(*self.TITTLE)
+        transaction_title_element = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(self.TITTLE)
+        )
         return transaction_title_element.text
 
 
