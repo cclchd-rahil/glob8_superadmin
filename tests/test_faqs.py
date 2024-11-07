@@ -7,7 +7,6 @@ from pages.faqs_page import Faqs
 def test_faqs(driver):
     faqs_page = Faqs(driver)
     faqs_page.click_faqs()
-    time.sleep(2)
     captured_text = faqs_page.get_faqs_title()
     expected_text = "FAQs"
 
