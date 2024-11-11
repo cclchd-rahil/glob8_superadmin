@@ -2,7 +2,7 @@ import pytest
 from pages.support_ticket_page import SupportTickets
 
 @pytest.mark.usefixtures("login")
-def test_faqs(driver):
+def test_supporttickets(driver):
     support_ticket_page = SupportTickets(driver)
     support_ticket_page.click_support()
     captured_text = support_ticket_page.get_support_title()
